@@ -21,15 +21,20 @@ name: testing yaml
 #    runs-on: ubuntu-latest
 
 #runnings jobs
+
+on: push #when i push to github activate code
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
-      - name: checkout to repo
-        uses: actions/checkout@v2
-      
-      - name: Configure Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.12.2'
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - run: pip install ruff
+    - run: |
+      ruff check .
+      ruff fix .
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'style fixes by ruff'

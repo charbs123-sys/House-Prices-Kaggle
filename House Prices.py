@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from scipy.stats import expon as sp_expon # instead of grid search we specify a distribution from which the hyperparameter values may be sampled from
 from scipy.stats import randint as sp_randint
 import sklearn.gaussian_process as gp
+import ruff
 
 val = int(-1)
 print(val)
@@ -22,3 +23,6 @@ print(house_data)
 #print(house_data.describe())
 #print(house_data.isna().sum())
 log_base = LogisticRegression()
+
+
+
