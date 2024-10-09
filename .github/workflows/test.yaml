@@ -1,15 +1,14 @@
-name: testing yaml 
-
-on: push #when i push to github activate code
+name: Lint and Commit
+on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  lint:
+    runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
     - run: pip install ruff
-    - run: |
+    - run: | 
       ruff check .
       ruff fix .
     - uses: stefanzweifel/git-auto-commit-action@v4
