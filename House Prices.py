@@ -9,13 +9,13 @@ from scipy.stats import randint as sp_randint
 import sklearn.gaussian_process as gp
 import ruff
 
-val = int(-1)
-print(val)
+val = int(-1)   
+print(val)   
 #import seaborn as sb
 
 #Conducting Exploratory Data Analysis (EDA)
 
-house_data = pd.read_csv("train.csv")
+house_data = pd.read_csv("train.csv")   
 
 #print(house_data.info())
 
