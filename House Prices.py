@@ -18,8 +18,13 @@ print(val)
 house_data = pd.read_csv("train.csv")
 
 #print(house_data.info())
+
 house_data.drop(columns=['Id'],inplace=True)
 print(house_data)
+
+
 #print(house_data.describe())
+
 #print(house_data.isna().sum())
+
 log_base = LogisticRegression()
