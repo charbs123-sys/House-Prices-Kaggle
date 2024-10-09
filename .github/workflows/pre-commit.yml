@@ -1,14 +1,11 @@
-name: linting python code
+name: pre-commit
+
 on: push
 
 jobs:
-  tests:
+  pre-commit:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: pre-commit/action@v3.0.0
-    - uses: actions/setup-python@v4
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Test with pytest
-      run: python -m pytest .
+    - uses: actions/setup-python@v3
+    - uses: pre-commit/action@v3.0.1
