@@ -1,15 +1,14 @@
-name: Lint and Commit
+name: linting python code
 on: push
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest 
+  tests:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-    - run: pip install ruff
-    - run: ruff check .
-    - run: ruff fix .
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: 'style fixes by ruff'
+    - uses: actions/checkout@v3
+    - uses: pre-commit/action@v3.0.0
+    - uses: actions/setup-python@v4
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Test with pytest
+      run: python -m pytest .
