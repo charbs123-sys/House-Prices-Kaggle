@@ -23,6 +23,3 @@ print(house_data)
 #print(house_data.describe())
 #print(house_data.isna().sum())
 log_base = LogisticRegression()
-
-
-
