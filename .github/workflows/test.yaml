@@ -1,29 +1,6 @@
 name: testing yaml 
 
-#1 - atomated workflow (observe cron syntax)
-#on:
-#  schedule:
-#    -cron: '0 * * * *' #meaning we workflow runs every hour
-
-#2 - manual workflow
-#on:
-#  workflow_dispatch: #we trigger the workflow to occur in the github repo
-
-#3 - workflow through HTTP request
-#on:
-#  repository_dispatch:
-#    types: event_type #need to send POST request to github API and triggers repo
-#dispatch event executing workflow based on event_type
-
-#choosing virtual machine
-#jobs:
-#  on:
-#    runs-on: ubuntu-latest
-
-#runnings jobs
-
 on: push #when i push to github activate code
-
 
 jobs:
   build:
